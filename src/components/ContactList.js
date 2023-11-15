@@ -22,4 +22,4 @@ export default function ContactList(props) {
       {renderContactList}
     </div>
   )
-}
+} 
