@@ -4,8 +4,7 @@ import Header from './Header';
 import AddContact from './Addcontact';
 import ContactList from './ContactList';
 import './App.css';
-import LoginForm from "./LoginForm";
-function App1() {
+function ContactManager() {
 //render a list 
     //const contacts =
     //[
@@ -76,7 +75,7 @@ function App1() {
    </div>
   );
 }
-export default App1;
+export default ContactManager;
 
 
 

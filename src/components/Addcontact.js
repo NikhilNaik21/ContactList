@@ -1,11 +1,12 @@
 import React from "react";
-
+import './Addcontact.css'
 class Addcontact extends React.Component {
    
 
         state = {
             name: "",
             email:"",
+            number:"",
         };
 
         add=(e)=>
@@ -20,7 +21,7 @@ class Addcontact extends React.Component {
                 this.props.addcontactHandler(this.state);
 
             // to clear fields
-            this.setState({name: "", email: ""});
+            this.setState({name: "", email: "",number:""});
             // console.log(this.state);
             // console.log("test");
         };
@@ -49,6 +50,18 @@ class Addcontact extends React.Component {
                             onChange={(e)=>this.setState({email: e.target.value})}
                             ></input>
                         </div>
+
+                            {/* ------------------ */}
+                        <div className="field">
+                        <label>Contact</label>
+                        <input type="text" 
+                            name="mobile" 
+                            placeholder="Contact Number"
+                            value={this.state.number}
+                            onChange={(e)=>this.setState({number: e.target.value})}
+                            ></input>
+                        </div>
+
                         <button className="ui button blue" >Add</button>
 
                     </form>

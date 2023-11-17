@@ -1,42 +1,52 @@
-/* Style the container */
-#x1{
-  max-width: 300px;
-  margin: 50px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.vh-100 {
+  min-height: 100vh;
+}
+
+.container-fluid {
+  height: 100%;
+}
+
+.row {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+}
+
+form {
+  background-color: #fff;
+  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
 }
 
-/* Style the form */
-#X2 {
-  display: flex;
-  flex-direction: column;
-  
+.form-outline {
+  margin-bottom: 20px;
 }
 
-/* Style the labels and inputs */
-label {
-  margin-bottom: 5px;
+.form-outline input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
 }
 
-input {
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-
-/* Style the button */
-button {
+.btn-primary {
   background-color: #007bff;
   color: #fff;
-  padding: 10px;
   border: none;
-  border-radius: 3px;
+  padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-button:hover {
+.btn-primary:hover {
   background-color: #0056b3;
 }
+img{
+  width: 25%;
+}
+
+/* #loginbutton{
+  margin-left: 34%;
+} */

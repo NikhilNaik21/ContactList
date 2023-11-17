@@ -4,7 +4,7 @@ export default function ContactList(props) {
    console.log(props);
 
    const deleteContactHandler = (id) => {
-    console.log("aaa",id);
+    // console.log("aaa",id);
     props.getcontactId(id);
     
   };
