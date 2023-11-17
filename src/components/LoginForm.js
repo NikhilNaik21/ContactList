@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import { useAppContext } from './AppContext';
 import './loginpage.css';
+
+
 const LoginForm = () => {
   const { dispatch } = useAppContext();
   const [email, setEmail] = useState('');
@@ -61,63 +63,80 @@ const LoginForm = () => {
   
     //</div>
 
-    <section className="vh-100">
-    <div className="container-fluid h-custom">
-      <div className="row d-flex justify-content-center align-items-center h-100">
-        <div className="col-md-9 col-lg-6 col-xl-5">
-          <img
-            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-            className="img-fluid"
-            alt="Sample image"
-          />
-        </div>
-        <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-          <form style={{ maxWidth: "400px", margin: "auto" }}>
-            <div className="form-outline mb-4">
-              <input
-                type="email"
-                id="form3Example3"
-                className="form-control form-control-lg"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email ID"
-                required
-              />
+
+      <section className="h-100 gradient-form" style={{ backgroundColor: '#eee' }}>
+      <div className="container py-5 h-100">
+        <div className="row d-flex justify-content-center align-items-center h-100">
+          <div className="col-xl-10">
+            <div className="card rounded-3 text-black">
+              <div className="row g-0">
+                <div className="col-lg-6">
+                  <div className="card-body p-md-5 mx-md-4">
+                    <div className="text-center">
+                      <img
+                        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+                        style={{ width: '185px' }}
+                        alt="logo"
+                      />
+                      <h4 className="mt-1 mb-5 pb-1">Contact Manager Application</h4>
+                    </div>
+
+                    <form>
+                <div className="mb-4">
+                  <label htmlFor="form3Example3" className="form-label">
+                    Email address
+                  </label>
+                  <input
+                    type="email"
+                    id="form3Example3"
+                    className="form-control form-control-lg"
+                    placeholder="Enter a valid email address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <label htmlFor="form3Example4" className="form-label">
+                    Password
+                  </label>
+                  <input
+                    type="password"
+                    id="form3Example4"
+                    className="form-control form-control-lg"
+                    placeholder="Enter password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </div>
+
+                <div className="text-center text-lg-start mt-4 pt-2">
+                  <button
+                    type="button"
+                    className="btn btn-primary btn-lg"
+                    onClick={handleLogin}
+                  >
+                    Login
+                  </button>
+                </div>
+              </form>
+                  </div>
+                </div>
+                <div className="col-lg-6 d-flex align-items-center gradient-custom-2">
+                  <div className="text-white px-3 py-4 p-md-5 mx-md-4">
+                    <h4 className="mb-4">The future is bright.</h4>
+                    <p className="small mb-0">
+                    A contact manager is a software program that enables users to easily store and find contact information, 
+                    such as names, addresses, and telephone numbers. They are contact-centric databases that provide a fully integrated approach to tracking all information and communication activities linked to contacts.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-  
-            <div className="form-outline mb-3">
-              <input
-                type="password"
-                id="form3Example4"
-                className="form-control form-control-lg"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
-                required
-              />
-            </div>
-  
-            <button id='loginbutton'
-              onClick={() => {
-                handleLogin();
-                handlereset();
-              }}
-              type="button"
-              className="btn btn-primary btn-lg"
-              style={{
-                paddingLeft: "2.5rem",
-                paddingRight: "2.5rem",
-                marginTop: "10px", // Added margin top for spacing
-              }}
-            >
-              Login
-            </button>
-          </form>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  
+    </section>
   );
 };
 
