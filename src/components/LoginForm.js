@@ -6,6 +6,8 @@ import './loginpage.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import ContactImage from '../Image/ContactImage.jpg';
+
 
 const LoginForm = () => {
   const { dispatch } = useAppContext();
@@ -91,7 +93,7 @@ const LoginForm = () => {
                   <div className="card-body p-md-5 mx-md-4">
                     <div className="text-center">
                       <img
-                        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+                        src={ContactImage}
                         style={{ width: '185px' }}
                         alt="logo"
                       />
