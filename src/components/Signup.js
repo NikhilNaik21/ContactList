@@ -43,7 +43,6 @@ const SignupForm = ({ history }) => {
               <div className="col-lg-6">
                 <div className="card-body p-md-5 mx-md-4">
                   <div className="text-center">
-                    {/* Your Logo */}
                     <h4 className="mt-1 mb-5 pb-1">Signup</h4>
                   </div>
 
@@ -88,7 +87,13 @@ const SignupForm = ({ history }) => {
                   </form>
                 </div>
               </div>
-              {/* ... (rest of the signup form structure) */}
+              <div className="col-lg-6 d-flex align-items-center justify-content-center">
+                  <img
+                    src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                    className="img-fluid"
+                    alt="Sample image"
+                  />
+                </div>
             </div>
           </div>
         </div>

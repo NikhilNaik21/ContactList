@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <div id='x1' className="header-container ui-fixed menu">
+    <div id='Headercontainer' className="header-container ui-fixed menu">
       <div className="ui container center">
-        <h2 id='x2' style={{ textAlign: "center" }}>Contact Manager</h2>
-        <Link to="/" className="btn btn-outline-danger">Logout</Link>
+        <h2 id='Headerh2' style={{ textAlign: "center" }}>Contact Manager</h2>
+        <Link id='Headerlink' to="/" className="btn btn-outline-danger">Logout</Link>
       </div>
     </div>
   );

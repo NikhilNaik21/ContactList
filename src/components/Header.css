@@ -1,6 +1,6 @@
 /* Header.css */
 
-#x1
+#Headercontainer
 {
     background:whitesmoke;
     width: 210%;
@@ -8,12 +8,12 @@
     margin-bottom: 3%;
     
 }
-:link{
+#Headerlink{
     margin-left: 140%;
     margin-bottom: 0.1%;
    
 }
-#x2{
+#Headerh2{
     margin-left: -52%;
     padding-top: 1%;
     
