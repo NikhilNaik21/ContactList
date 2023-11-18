@@ -3,7 +3,7 @@ import { v4 as uuid } from 'uuid';
 import Header from './Header';
 import AddContact from './Addcontact';
 import ContactList from './ContactList';
-import './App.css';
+import './CSS/App.css';
 function ContactManager() {
 //render a list 
     //const contacts =

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Button } from "antd";
-import './contactcard.css';
+import './CSS/contactcard.css';
 
 import user from '../Image/user.png';
 
