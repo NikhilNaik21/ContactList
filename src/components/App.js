@@ -1,22 +1,24 @@
 import React from 'react'
-import LoginForm from './LoginForm'
 import { useAppContext } from './AppContext';
-import ContactManager from './ContactManager';
-
+import AppRouter from './Routing';
 export default function App() {
-  const { state } = useAppContext();
-  const { isLoggedIn } = state;
+    const { state } = useAppContext();
+    const { isLoggedIn } = state;
   return (
-    <div>
-    {isLoggedIn ? (
-      <>
-       {/* <h1>Welcome to the App!</h1> */}
-      <ContactManager />
-      </>
-    ) : (
-     <LoginForm />
+  //   <div>
     
-    )}
-  </div>
+  //   {isLoggedIn ? (
+  //     <>
+  //      {/* <h1>Welcome to the App!</h1> */}
+  //     <ContactManager />
+  //     </>
+  //   ) : (
+  //    <LoginForm />
+    
+  //   )}
+
+  // </div>
+
+  <AppRouter isLoggedIn={isLoggedIn} />
   )
 }

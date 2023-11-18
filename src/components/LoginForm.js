@@ -3,13 +3,16 @@
 import React, { useState } from 'react';
 import { useAppContext } from './AppContext';
 import './loginpage.css';
-
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
   const { dispatch } = useAppContext();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate();
 
   const handlereset = () => {
     // Perform reset logic here
@@ -17,17 +20,31 @@ const LoginForm = () => {
     setPassword('');
   };
 
-  const handleLogin = () => {
-    // Perform authentication logic here
-    if (email === '' && password === '') {
-      alert('Field cannot be empty');
-    } else if (email === 'Admin' && password === 'Admin') {
-      dispatch({ type: 'LOGIN' });
-      console.log('Login successful');
-    } else {
-      console.log('Login failed');
-      setErrorMessage('Wrong username or password. Please try again.');
-      alert(errorMessage);
+  const handleLogin = async () => {
+    try {
+      if (email === '' || password === '') {
+        alert('Field cannot be empty');
+        return;
+      }
+  
+      // Make an API request to check if the user exists in db.json
+      const response = await axios.get(`http://localhost:3001/users?email=${email}&password=${password}`);
+      console.log(response);
+      if (response.data.length > 0) {
+        // User exists, perform login
+         dispatch({ type: 'LOGIN' });
+        console.log('Login successful');
+        
+        navigate('/app');
+       
+      } else {
+        // User not found, display error
+        console.log('Login failed');
+        setErrorMessage('Wrong username or password. Please try again.');
+        alert(errorMessage);
+      }
+    } catch (error) {
+      console.error('Error during login:', error.message);
     }
   };
 
@@ -110,11 +127,17 @@ const LoginForm = () => {
                   />
                 </div>
 
+                <div class="d-flex align-items-center justify-content-center pb-4">
+                    <p class="mb-0 me-2">Don't have an account?</p>
+                    {/* <button type="button" class="btn btn-outline-danger" onClick={handlesignup}>Create new</button> */}
+                    <Link to="/Signup" className="btn btn-outline-danger">Create new</Link>
+                  </div>
+
                 <div className="text-center text-lg-start mt-4 pt-2">
                   <button
                     type="button"
                     className="btn btn-primary btn-lg"
-                    onClick={handleLogin}
+                    onClick={() => { handleLogin(); handlereset(); }}
                   >
                     Login
                   </button>
@@ -124,10 +147,10 @@ const LoginForm = () => {
                 </div>
                 <div className="col-lg-6 d-flex align-items-center gradient-custom-2">
                   <div className="text-white px-3 py-4 p-md-5 mx-md-4">
-                    <h4 className="mb-4">The future is bright.</h4>
+                    <h4 className="mb-4" style={{textAlign:'center'}}>The future is bright.</h4>
                     <p className="small mb-0">
                     A contact manager is a software program that enables users to easily store and find contact information, 
-                    such as names, addresses, and telephone numbers. They are contact-centric databases that provide a fully integrated approach to tracking all information and communication activities linked to contacts.
+                    such as names, email, and telephone numbers. They are contact-centric databases that provide a fully integrated approach to tracking all information and communication activities linked to contacts.
                     </p>
                   </div>
                 </div>
