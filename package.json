@@ -23,7 +23,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -r https://github.com/NikhilNaik21/ContactList.git",
+    "deploy": "gh-pages -d build ",
     "start": "react-scripts start && json-server --watch db.json --port 3001",
     "build": "react-scripts build",
     "test": "react-scripts test",
