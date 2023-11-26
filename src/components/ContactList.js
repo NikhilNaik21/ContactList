@@ -1,11 +1,12 @@
 import React from 'react';
 import ContactCard from './Contactcard';
+
 export default function ContactList(props) {
    console.log(props);
 
    const deleteContactHandler = (id) => {
     // console.log("aaa",id);
-    props.getcontactId(id);
+    props.getcontactId(id);    //tocontactmanager
     
   };
 

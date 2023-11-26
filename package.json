@@ -1,6 +1,5 @@
 {
   "name": "contactmanagement",
-  "homepage": "https://NikhilNaik21.github.io/ContactList",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -22,9 +21,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -r https://github.com/NikhilNaik21/ContactList.git",
-    "start": "react-scripts start && json-server --watch db.json --port 3001",
+    "start": "npm-run-all --parallel start-api start-react",
+    "start-api": "json-server --watch db.json --port 3001",
+    "start-react": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -50,6 +49,7 @@
   "devDependencies": {
     "gh-pages": "^6.0.0",
     "install": "^0.13.0",
-    "npm": "^10.2.4"
+    "npm": "^10.2.4",
+    "npm-run-all": "^4.1.5"
   }
 }

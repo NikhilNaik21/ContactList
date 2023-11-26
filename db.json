@@ -1,19 +1,30 @@
 {
   "users": [
     {
-      "email": "Admin",
-      "password": "Admin",
+      "email": "naiknikhil596@gmail.com",
+      "password": "123",
       "id": 1
     },
     {
-      "email": "naiknikhil596@gmail.com",
-      "password": "123",
+      "email": "nn@gmail.com",
+      "password": "abc",
       "id": 2
+    }
+  ],
+  "contacts": [
+    {
+      "userid": "1",
+      "name": "Nikhil Raghunath Naik",
+      "email": "nikhilnaik5966@gmail.com",
+      "number": "08208447816",
+      "id": "10fb20cd-fe4f-42ca-9d03-f6771480fa18"
     },
     {
-      "email": "Admin1",
-      "password": "Admin1",
-      "id": 3
+      "userid": "2",
+      "name": "Dummy1",
+      "email": "dumm1@gmail.com",
+      "number": "54665554",
+      "id": "84ac4cd4-afcd-4d10-9962-e2ca110ac58f"
     }
   ]
 }

@@ -1,5 +1,3 @@
-
-// export default LoginForm;
 import React, { useState } from 'react';
 import { useAppContext } from './AppContext';
 import './CSS/loginpage.css';
@@ -29,18 +27,25 @@ const LoginForm = () => {
         return;
       }
   
-      // Make an API request to check if the user exists in db.json
+      //API request to check if the user exists in db.json
       const response = await axios.get(`http://localhost:3001/users?email=${email}&password=${password}`);
       console.log(response);
       if (response.data.length > 0) {
-        // User exists, perform login
+        // User exists = perform login
          dispatch({ type: 'LOGIN' });
+
+        const userid = response.data[0].id;   //id taken from sucessful login user 
+        const useremail = response.data[0].email;
+        sessionStorage.setItem("userid" , userid);
+        sessionStorage.setItem("email" ,useremail );
+        console.log(userid);
+        console.log("hiiiii",useremail);
         console.log('Login successful');
         
         navigate('/app');
        
       } else {
-        // User not found, display error
+        // User not found - display error
         console.log('Login failed');
         setErrorMessage('Wrong username or password. Please try again.');
         alert(errorMessage);
@@ -51,37 +56,6 @@ const LoginForm = () => {
   };
 
   return (
-    // <div id='X1'>
-
-    //       <h2>Login</h2>
-    //       <form id='X2'>
-    //         <label>
-    //           Email:
-    //           <input
-    //             type='email'
-    //             value={email}
-    //             onChange={(e) => setEmail(e.target.value)}
-    //             required
-    //           />
-    //         </label>
-    //         <br />
-    //         <label>
-    //           Password:
-    //           <input
-    //             type='password'
-    //             value={password}
-    //             onChange={(e) => setPassword(e.target.value)}
-    //             required
-    //           />
-    //         </label>
-    //         <br />
-    //         <button type='button' onClick={() => { handleLogin(); handlereset(); }}>
-    //           Login
-    //         </button>
-    //       </form>
-  
-    //</div>
-
 
       <section className="h-100 gradient-form" style={{ backgroundColor: '#eee' }}>
       <div className="container py-5 h-100">

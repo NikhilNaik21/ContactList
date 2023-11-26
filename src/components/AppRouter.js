@@ -11,7 +11,6 @@ const AppRouter = () => {
         <Route path="/" element={<LoginForm></LoginForm>} />
         <Route path="/signup" element={<SignupForm></SignupForm>} />
         <Route path="/app" element={<ContactManager></ContactManager>} />
-        {/* Add other routes as needed */}
       </Routes>
     </Router>
   );

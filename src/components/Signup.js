@@ -1,18 +1,32 @@
 import React, { useState } from 'react';
 import axios from 'axios';
  import { useNavigate } from 'react-router-dom';
-
-const SignupForm = ({ history }) => {
+//rfc
+const SignupForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
    const navigate = useNavigate();
+
   const handlereset = () => {
     setEmail('');
     setPassword('');
   };
 
+  const isValidEmail = (email) => {
+    // Regular expression for a valid email address
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   const handleSignup = async () => {
     try {
+
+       // Check if the email is in a valid format
+       if (!isValidEmail(email)) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+
       // Check if the user already exists in db.json
       const existingUser = await axios.get(`http://localhost:3001/users?email=${email}`);
       if (existingUser.data.length > 0) {

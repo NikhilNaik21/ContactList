@@ -8,7 +8,7 @@ const CustomModalPrompt = ({ isOpen, onConfirm, onCancel }) => {
     return (
       <Modal
         title="Delete Prompt"
-        visible={isOpen} // Use "visible" instead of "open"
+        visible={isOpen} 
         onOk={onConfirm}
         onCancel={onCancel}
         footer={[

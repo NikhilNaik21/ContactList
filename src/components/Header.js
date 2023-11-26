@@ -7,7 +7,8 @@ const Header = () => {
     <div id='Headercontainer' className="header-container ui-fixed menu">
       <div className="ui container center">
         <h2 id='Headerh2' style={{ textAlign: "center" }}>Contact Manager</h2>
-        <Link id='Headerlink' to="/" className="btn btn-outline-danger">Logout</Link>
+        <span id='a'>{sessionStorage.getItem("email")}</span>
+        <Link  id='Headerlink' to="/" className="btn btn-outline-danger">Logout</Link>
       </div>
     </div>
   );
